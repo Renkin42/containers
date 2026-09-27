@@ -12,5 +12,9 @@ Volume=vaultwarden.volume:/data
 
 Secret=vaultwarden-admin-token,type=env,target=ADMIN_TOKEN
 
+[Service]
+Restart=always
+TimeoutStartsec=600
+
 [Install]
 WantedBy=default.target

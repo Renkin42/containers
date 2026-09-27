@@ -7,7 +7,13 @@ ContainerName=%i-cloudflared
 Image=docker.io/cloudflare/cloudflared:latest
 AutoUpdate=registry
 
+Exec=tunnel run
+
 Secret=cloudflare-%i-token,type=env,target=TUNNEL_TOKEN
+
+[Service]
+Restart=Always
+TimeoutStartSec=600
 
 [Install]
 WantedBy=default.target

@@ -17,5 +17,9 @@ Sercrt=safeway-id,type=env,target=SW_ID
 Secret=safeway-passwork,type=env,target=SW_PASS
 Secret=caldav-password,type=env,target=CALDAV_PASSWORD
 
+[Service]
+Restart=on-failure
+TimeoutStartSec=600
+
 [Install]
 WantedBy=default.target

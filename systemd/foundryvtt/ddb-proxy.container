@@ -13,5 +13,9 @@ Environment=VIRTUAL_HOST=ddb-proxy.renkin42.dev
 Environment=VIRTUAL_PORT=443
 Environment=PORT=3001
 
+[Service]
+Restart=always
+TimeoutStartSec=600
+
 [Install]
 WantedBy=default.target

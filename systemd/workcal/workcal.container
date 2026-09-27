@@ -9,5 +9,9 @@ AutoUpdate=registry
 
 Volume=workcal.volume:/data
 
+[Service]
+Restart=always
+TimeoutStartSec=600
+
 [Install]
 WantedBy=default.target

@@ -20,5 +20,9 @@ Environment=FOUNDRY_PROXY_SSL=true
 Secret=foundry-password,type=env,target=FOUNDRY_PASSWORD
 Secret=foundry-admin-key,type=env,target=FOUNDRY_ADMIN_KEY
 
+[Service]
+Restart=always
+TimeoutStartSec=600
+
 [Install]
 WantedBy=default.target

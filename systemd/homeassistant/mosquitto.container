@@ -9,5 +9,9 @@ AutoUpdate=registry
 
 Volume=mosquitto.volume:/mosquitto/
 
+[Service]
+Restart=always
+TimeoutStartSec=600
+
 [Install]
 WantedBy=default.target
