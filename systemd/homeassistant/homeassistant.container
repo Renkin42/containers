@@ -11,6 +11,9 @@ AutoUpdate=registry
 Volume=homeassistant.volume:/config
 Volume=/etc/localtime:/etc/localtime:ro
 
+Secret=renkin42-dev-cert,target=renkin42.dev.pem
+Secret=renkin42-dev-key,target=renkin42.dev.key
+
 [Service]
 Restart=always
 TimeoutStartSec=600

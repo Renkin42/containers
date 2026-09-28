@@ -11,14 +11,16 @@ AutoUpdate=registry
 
 Volume=foundryvtt.volume:/data
 
-Environment=FOUNDRY_USERNAME=Renkin42
 Environment=FOUNDRY_TELEMETRY=true
 Environment=FOUNDRY_HOSTNAME=dnd.renkin42.dev
 Environment=FOUNDRY_PROXY_PORT=443
 Environment=FOUNDRY_PROXY_SSL=true
+Environment=FOUNDRY_SSL_CERT=/run/secrets/renkin42.dev.pem
+Environment=FOUNDRY_SSL_KEY=/run/secrets/renkin42.dev.key
 
-Secret=foundry-password,type=env,target=FOUNDRY_PASSWORD
-Secret=foundry-admin-key,type=env,target=FOUNDRY_ADMIN_KEY
+Secret=foundry-config,target=config.json
+Secret=renkin42-dev-cert,target=renkin42.dev.pem
+Secret=renkin42-dev-key,target=renkin42.dev.key
 
 [Service]
 Restart=always
