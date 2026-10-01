@@ -2,14 +2,14 @@
 Description=CloudFlare Tunnel
 
 [Container]
-Pod=%i.pod
-ContainerName=%i-cloudflared
+Pod=tunnel.pod
+ContainerName=tunnel
 Image=docker.io/cloudflare/cloudflared:latest
 AutoUpdate=registry
 
 Exec=tunnel run
 
-Secret=cloudflare-%i-token,type=env,target=TUNNEL_TOKEN
+Secret=cloudflare-token,type=env,target=TUNNEL_TOKEN
 
 [Service]
 Restart=Always

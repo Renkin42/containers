@@ -1,0 +1,4 @@
+[Network]
+NetworkName=proxy
+Subnet=172.23.0.0/16
+Gateway=172.23.0.1

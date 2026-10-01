@@ -1,0 +1,4 @@
+[Pod]
+PodName=tunnel
+PublishPort=8080:8080
+UserNS=auto

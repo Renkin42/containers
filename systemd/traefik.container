@@ -1,0 +1,21 @@
+[Unit]
+Description=Traefik Reverse Proxy
+
+[Container]
+Pod=tunnel.pod
+ContainerName=traefik
+Image=docker.io/library/traefik:latest
+AutoUptade=registry
+
+Volume=/etc/containers/configs/traefik.yaml:/etc/traefik/traefik.yaml:ro
+Volume=/var/run/podman.sock:/var/run/docker.sock:ro
+
+Secret=renkin42-dev-cert,target=renkin42.dev.pem
+Secret=renkin42-dev-key,target=renkin42.dev.key
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target

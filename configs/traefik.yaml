@@ -1,0 +1,30 @@
+api:
+  dashboard: true
+  insecure: true
+
+log:
+  level: DEBUG
+
+entryPoints:
+  websecure:
+    address: ":443"
+
+providers:
+  file:
+    filename: /etc/traefik/traefik.yaml
+    watch: true
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+
+tls:
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /run/secrets/renkin42.dev.pem
+        keyFile: /run/secrets/renkin42.dev.key
+  certificates:
+    - certFile: /run/secrets/renkin42.dev.pem
+      keyFile: /run/secrets/renkin42.dev.key
+    - certFile: /run/secrets/wedomad.science.pem
+      keyFile: /run/secrets/wedomad.science.key
