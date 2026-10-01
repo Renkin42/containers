@@ -1,7 +1,5 @@
 [Unit]
 Description=D&D Beyond Importer Proxy Server
-Required=cloudflared@foundryvtt.service
-After=cloudflared@foundryvtt.service
 
 [Container]
 Pod=foundryvtt.pod
@@ -15,7 +13,7 @@ Environment=PORT=3001
 
 [Service]
 Restart=always
-TimeoutStartSec=600
+TimeoutStartSec=900
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

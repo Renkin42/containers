@@ -13,7 +13,7 @@ Secret=cloudflare-%i-token,type=env,target=TUNNEL_TOKEN
 
 [Service]
 Restart=Always
-TimeoutStartSec=600
+TimeoutStartSec=900
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

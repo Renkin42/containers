@@ -7,11 +7,11 @@ ContainerName=mosquitto
 Imaage=docker.io/library/eclipse-mosquitto:latest
 AutoUpdate=registry
 
-Volume=mosquitto.volume:/mosquitto/
+Volume=mosquitto.volume:/mosquitto/:Z,U
 
 [Service]
 Restart=always
-TimeoutStartSec=600
+TimeoutStartSec=900
 
 [Install]
 WantedBy=multi-user.target

@@ -7,11 +7,11 @@ ContainerName=workcal
 Image=docker.io/tomsquest/docker-radicale:latest
 AutoUpdate=registry
 
-Volume=workcal.volume:/data
+Volume=workcal.volume:/data:Z,U
 
 [Service]
 Restart=always
-TimeoutStartSec=600
+TimeoutStartSec=900
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

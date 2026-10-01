@@ -19,7 +19,7 @@ Secret=caldav-password,type=env,target=CALDAV_PASSWORD
 
 [Service]
 Restart=on-failure
-TimeoutStartSec=600
+TimeoutStartSec=900
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

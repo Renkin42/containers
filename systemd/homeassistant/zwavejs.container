@@ -10,13 +10,13 @@ StopSignal=SIGINT
 
 AddDevice=/dev/serial/by-id/usb-Zooz_800_Z-Wave_Stick_533D004242-if00:/dev/zwave
 
-Volume=zwavejs.volume:/usr/src/app/store
+Volume=zwavejs.volume:/usr/src/app/store:Z,U
 
 Environment=TZ=America/Los_Angeles
 
 [Service]
 Restart=always
-TimeoutStartSec=600
+TimeoutStartSec=900
 
 [Install]
 WantedBy=multi-user.target

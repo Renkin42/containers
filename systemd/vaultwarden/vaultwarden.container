@@ -1,6 +1,5 @@
 [Unit]
 Description=Vaultwarden Password Manager
-After=couldflared@vaultwarden.service
 
 [Container]
 Pod=vaultwarden.pod
@@ -8,7 +7,7 @@ ContainerName=vaultwarden
 Image=ghcr.io/dani-garcia/vaultwarden:latest
 AutoUpdate=registry
 
-Volume=vaultwarden.volume:/data
+Volume=vaultwarden.volume:/data:Z,U
 
 Environment=DOMAIN="https://bitwarden.renkin42.dev"
 Environment=ROCKET_TLS='{certs="/run/secrets/renkin42.dev.pem",key="/run/secrets/renkin42.dev.key"}'
@@ -22,4 +21,4 @@ Restart=always
 TimeoutStartsec=600
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

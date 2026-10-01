@@ -1,6 +1,6 @@
 [Unit]
 Description=Home Assistant home automation server
-After=cloudflared@homeassistant.service mosquitto.service zwavejs.service
+After=mosquitto.service zwavejs.service
 
 [Container]
 Pod=homeassistant.pod
@@ -8,15 +8,17 @@ ContainerName=homeassistant
 Image=ghcr.io/home-assistant/home-assistant:stable
 AutoUpdate=registry
 
-Volume=homeassistant.volume:/config
+Volume=homeassistant.volume:/config:Z,U
+Volume=/etc/containers/configs/homeassistant.yaml:/config/configuration.yaml:ro
 Volume=/etc/localtime:/etc/localtime:ro
 
+Secret=homeassistant-secrets,target=/config/secrets.yaml
 Secret=renkin42-dev-cert,target=renkin42.dev.pem
 Secret=renkin42-dev-key,target=renkin42.dev.key
 
 [Service]
 Restart=always
-TimeoutStartSec=600
+TimeoutStartSec=900
 
 [Install]
 WantedBy=multi-user.target

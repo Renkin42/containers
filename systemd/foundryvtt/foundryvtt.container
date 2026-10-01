@@ -1,7 +1,5 @@
 [Unit]
 Description=Foundry Virtial Tabletop Server
-Requires=cloudflared@foundryvtt.service
-After=cloudflared@foundryvtt.service
 
 [Container]
 Pod=foundryvtt.pod
@@ -9,7 +7,7 @@ ContainerName=foundryvtt
 Image=ghcr.io/felddy/foundryvtt:14
 AutoUpdate=registry
 
-Volume=foundryvtt.volume:/data
+Volume=foundryvtt.volume:/data:Z,U
 
 Environment=FOUNDRY_TELEMETRY=true
 Environment=FOUNDRY_HOSTNAME=dnd.renkin42.dev
@@ -24,7 +22,7 @@ Secret=renkin42-dev-key,target=renkin42.dev.key
 
 [Service]
 Restart=always
-TimeoutStartSec=600
+TimeoutStartSec=900
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
