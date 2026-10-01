@@ -1,3 +1,11 @@
 [Pod]
 PodName=workcal
-PublishPort=5232:5232
+Network=proxy.network
+
+Label="traefik.enable=true"
+Label="traefik.http.routers.scraper.rule=Host(`workcal.renkin42.dev`)"
+Label="traefik.http.routers.scraper.entrypoints=websecure"
+Label="traefik.http.routers.scraper.tls=true"
+Label="traefik.http.routers.scraper.service=scraper"
+Label="traefik.http.services.scraper.loadbalancer.server.port=5232"
+Label="traefik.docker.network=proxy"

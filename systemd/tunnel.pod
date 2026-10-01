@@ -1,4 +1,6 @@
 [Pod]
 PodName=tunnel
+Network=proxy.network
 PublishPort=8080:8080
 UserNS=auto
+

@@ -1,7 +1,16 @@
 [Pod]
 PodName=homeassistant
+Network=proxy.network
 PublishPort=1883:1883
 PublishPort=9001:9001
 PublishPort=8091:8091
 PublishPort=8123:8123
 UserNS=auto
+
+Label="traefik.enable=true"
+Label="traefik.http.routers.homeassistant.rule=Host(`ha.renkin42.dev`)"
+Label="traefik.http.routers.homeassistant.entrypoints=websecure"
+Label="traefik.http.routers.homeassistant.tls=true"
+Label="traefik.http.routers.homeassistant.service=homeassistant"
+Label="traefik.http.services.homeassistant.loadbalancer.server.port=8123"
+Label="traefik.docker.network=proxy"
