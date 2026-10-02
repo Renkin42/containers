@@ -9,8 +9,8 @@ Image=ghcr.io/home-assistant/home-assistant:stable
 AutoUpdate=registry
 
 Volume=homeassistant.volume:/config:Z,U
-Volume=/etc/containers/configs/homeassistant.yaml:/config/configuration.yaml:ro
-Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/containers/configs/homeassistant.yaml:/config/configuration.yaml:ro,z
+Volume=/etc/localtime:/etc/localtime:ro,z
 
 Secret=homeassistant-secrets,target=/config/secrets.yaml
 
@@ -19,4 +19,4 @@ Restart=always
 TimeoutStartSec=900
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=podman-start.target

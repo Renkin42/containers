@@ -18,4 +18,4 @@ Restart=always
 TimeoutStartsec=600
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=podman-start.target

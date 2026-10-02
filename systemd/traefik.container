@@ -1,5 +1,7 @@
 [Unit]
 Description=Traefik Reverse Proxy
+Requires=podman.socket
+After=podman.socket
 
 [Container]
 Pod=tunnel.pod
@@ -7,7 +9,7 @@ ContainerName=traefik
 Image=docker.io/library/traefik:latest
 AutoUptade=registry
 
-Volume=/etc/containers/configs/traefik.yaml:/etc/traefik/traefik.yaml:ro
+Volume=/etc/containers/configs/traefik.yaml:/etc/traefik/traefik.yaml:ro,z
 Volume=/var/run/podman.sock:/var/run/docker.sock:ro
 
 Secret=renkin42-dev-cert,target=renkin42.dev.pem
@@ -18,4 +20,4 @@ Restart=always
 TimeoutStartSec=900
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=podman-start.target
