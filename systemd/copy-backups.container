@@ -7,10 +7,10 @@ Image=docker.io/library/alpine:latest
 AutoUpdate=registry
 Exec=cp -r /source /dest
 
-Volume=/var/mnt/backup-drive:/source:ro,z
+Volume=/var/mnt/backup-drive/backups:/source:ro,z
 Volume=foundryvtt.volume:/dest/foundryvtt:z
 Volume=homeassistant.volume:/dest/homeassistant:z
-volume=mosquitto.volume:/dest/mosquitto:z
+Volume=mosquitto.volume:/dest/mosquitto:z
 Volume=zwavejs.volume:/dest/zwavejs:z
 Volume=vaultwarden.volume:/dest/vaultwarden:z
 Volume=workcal.volume:/dest/workcal:z

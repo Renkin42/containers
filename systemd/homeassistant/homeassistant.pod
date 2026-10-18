@@ -1,11 +1,7 @@
 [Pod]
 PodName=homeassistant
 Network=proxy.network
-PublishPort=1883:1883
-PublishPort=9001:9001
-PublishPort=8091:8091
-PublishPort=8123:8123
-UserNS=auto
+Network=host-vlan.network:ip=172.21.85.6
 
 Label="traefik.enable=true"
 Label="traefik.http.routers.homeassistant.rule=Host(`ha.renkin42.dev`)"

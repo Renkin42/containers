@@ -1,0 +1,5 @@
+[Network]
+Driver=macvlan
+Subnet=172.21.85.0/24
+Gateway=172.21.85.1
+InterfaceName=eno1

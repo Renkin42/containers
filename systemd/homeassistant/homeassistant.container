@@ -10,7 +10,8 @@ AutoUpdate=registry
 
 Volume=homeassistant.volume:/config:Z,U
 Volume=/etc/containers/configs/homeassistant.yaml:/config/configuration.yaml:ro,z
-Volume=/etc/localtime:/etc/localtime:ro,z
+
+Environment=TZ=America/Los_Angeles
 
 Secret=homeassistant-secrets,target=/config/secrets.yaml
 

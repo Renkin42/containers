@@ -1,7 +1,6 @@
 [Pod]
 PodName=foundryvtt
 Network=proxy.network
-UserNS=auto
 
 Label="traefik.enable=true"
 Label="traefik.docker.network=proxy"
