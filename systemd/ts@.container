@@ -1,0 +1,28 @@
+[Unit]
+Description=Tailscale sidecar for %i.pod
+
+[Container]
+Pod=%i.pod
+ContainerNamw=%i-tailscale
+Image=docker.io/tailscale/tailscale:latest
+AutoUpdate=registry
+HealthCmd=["tailscale", "status"]
+
+AddCapability=NET_ADMIN
+AddCapability=NET_RAW
+
+AddDevice=/dev/net/tun
+
+Environment=TS_EXTRA_ARGS=--advertise-tags=tag:container
+Environment=TS_STATE_DIR=/var/lib/tailscale
+
+Volume=ts@.volume:/var/lib/tailscale:Z,U
+
+Secret=ts-authkey-%i,type=env,target=TS_AUTHKEY
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=podman-start.target
