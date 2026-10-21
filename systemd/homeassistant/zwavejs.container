@@ -2,7 +2,7 @@
 Description=ZWaveJS Z-Wave Server
 
 [Container]
-Pod=homeassistant.pod
+Pod=app@hass.pod
 ContainerName=zwavejs
 Image=docker.io/zwavejs/zwave-js-ui:latest
 AutoUpdate=registry

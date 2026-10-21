@@ -3,7 +3,7 @@ Description=Home Assistant home automation server
 After=mosquitto.service zwavejs.service
 
 [Container]
-Pod=homeassistant.pod
+Pod=app@hass.pod
 ContainerName=homeassistant
 Image=ghcr.io/home-assistant/home-assistant:stable
 AutoUpdate=registry

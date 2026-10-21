@@ -2,7 +2,7 @@
 Description=Mosquitto MQTT Server
 
 [Container]
-Pod=homeassistant.pod
+Pod=app@hass.pod
 ContainerName=mosquitto
 Image=docker.io/library/eclipse-mosquitto:latest
 AutoUpdate=registry

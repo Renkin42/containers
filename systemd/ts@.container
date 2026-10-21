@@ -1,7 +1,8 @@
 [Unit]
-Description=Tailscale sidecar for %i.pod
+Description=Tailscale sidecar for %i app stack
 
 [Container]
+Pod=@.pod
 ContainerName=%i-tailscale
 Image=docker.io/tailscale/tailscale:latest
 AutoUpdate=registry

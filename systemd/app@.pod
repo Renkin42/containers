@@ -1,0 +1,7 @@
+[Unit]
+Description=App stack for %i
+
+[Pod]
+PodName=%i
+HostName=%i
+Network=proxy.network
