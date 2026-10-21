@@ -8,7 +8,7 @@ ContainerName=scraper
 Image=ghcr.io/renkin42/sws-scraper:latest
 AutoUpdate=registry
 
-Environment=CALDAV_SERVER=http://localhost:5232
+Environment=CALDAV_URL=http://localhost:5232
 Environment=CALDAV_USER=austin
 Environment=TZ=America/Los_Angeles
 Environment=LOGLEVEL=INFO
