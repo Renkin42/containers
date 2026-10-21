@@ -2,7 +2,7 @@
 PodName=homeassistant
 Network=proxy.network
 Network=host-vlan.network:ip=172.21.85.6
-Hostname=hass
+HostName=hass
 
 Label="traefik.enable=true"
 Label="traefik.http.routers.homeassistant.rule=Host(`ha.renkin42.dev`)"

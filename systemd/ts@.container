@@ -2,8 +2,7 @@
 Description=Tailscale sidecar for %i.pod
 
 [Container]
-Pod=%i.pod
-ContainerNamw=%i-tailscale
+ContainerName=%i-tailscale
 Image=docker.io/tailscale/tailscale:latest
 AutoUpdate=registry
 HealthCmd=["tailscale", "status"]
