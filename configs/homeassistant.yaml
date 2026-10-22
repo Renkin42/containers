@@ -15,9 +15,3 @@ alexa:
     endpoint: https://api.amazonalexa.com/v3/events
     client_id: !secret alexa-id
     client_secret: !secret alexa-secret
-
-calendar:
-  - platform: caldav
-    url: http://workcal:5232
-    username: !secret caldav-user
-    password: !secret caldav-password
