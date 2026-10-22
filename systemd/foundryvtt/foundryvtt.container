@@ -10,7 +10,7 @@ AutoUpdate=registry
 Volume=foundryvtt.volume:/data:Z,U
 
 Environment=FOUNDRY_TELEMETRY=true
-Environment=FOUNDRY_HOSTNAME=dnd.renkin42.dev
+Environment=FOUNDRY_HOSTNAME=dnd.coelacanth-stargazer.ts.net
 Environment=FOUNDRY_PROXY_PORT=443
 Environment=FOUNDRY_PROXY_SSL=true
 
