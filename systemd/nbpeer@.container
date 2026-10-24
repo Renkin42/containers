@@ -1,0 +1,24 @@
+[Unit]
+Description=Netbird Peer for %i.pod
+
+[Container]
+ContainerName=%i-netbird
+Image=docker.io/netbirdio/netbird:latest
+AutoUpdate=registry
+
+AddCapability=NET_ADMIN
+
+AddDevice=/dev/net/tun
+
+Environment=NB_MANAGEMENT_URL=https://netbird.renkin42.dev
+
+Volume=nbpeer@.volume:/var/lib/netbird:Z,U
+
+Secret=nb-key-%i,type=env,target=NB_SETUP_KEY
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=podman-start.target
