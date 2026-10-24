@@ -1,7 +1,7 @@
 [Pod]
 PodName=vaultwarden
 Network=proxy.network
-Hostname=vaultwarden
+HostName=vaultwarden
 
 Label="traefik.enable=true"
 Label="traefik.http.routers.vaultwarden.rule=Host(`bitwarden.renkin42.dev`)"

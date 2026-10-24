@@ -7,6 +7,9 @@ Image=docker.io/netbirdio/netbird:latest
 AutoUpdate=registry
 
 AddCapability=NET_ADMIN
+AddCapability=NET_RAW
+#AddCapability=SYS_ADMIN
+#AddCapability=SYS_RESOURCE
 
 AddDevice=/dev/net/tun
 
