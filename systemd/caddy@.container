@@ -1,0 +1,19 @@
+[Unit]
+Description=A Caddy sidecar for %i.pod
+
+[Container]
+ContainerName=%i-caddy
+Image=ghcr.io/caddybuilds/caddy-cloudflare:latest
+AutoUpdate=registry
+
+Volume=certs@.volume:/data/certificates:Z,U
+Volume=/etc/containers/configs/caddy/%i:/etc/caddy/Caddyfile:ro,z
+
+Secret=cloudflare-cert-token,type=env,target=CLOUDFLARE_API_TOKEN
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=podman-start.target
