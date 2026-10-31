@@ -10,7 +10,7 @@ SecurityLabelDisable=true
 
 Volume=/etc/containers/configs/traefik.yaml:/etc/traefik/traefik.yaml:ro,z
 Volume=/var/run/podman/podman.sock:/var/run/docker.sock:ro
-Volume=traefik.volume:/letsencrypt:Z,U
+Volume=proxy-certs.volume:/letsencrypt:Z,U
 
 Secret=cloudflare-cert-token,type=env,target=CLOUDFLARE_API_KEY
 
