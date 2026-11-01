@@ -4,5 +4,5 @@ Network=proxy.network
 HostName=vaultwarden
 
 Label="traefik.enable=true"
-Label="traefik.http.routers.vaultwarden.rule=Host(`bw.local.renkin42.dev`)"
+Label="traefik.http.routers.vaultwarden.rule=Host(`bw.home.renkin42.dev`)"
 Label="traefik.http.services.vaultwarden.loadbalancer.server.port=80"

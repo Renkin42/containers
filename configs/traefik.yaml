@@ -13,9 +13,9 @@ entryPoints:
       tls:
         certResolver: cloudflare
         domains:
-          - main: "local.renkin42.dev"
+          - main: "home.renkin42.dev"
             sans:
-              - "*.local.renkin42.dev"
+              - "*.home.renkin42.dev"
 
 providers:
   docker:
