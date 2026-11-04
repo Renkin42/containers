@@ -3,5 +3,11 @@ PodName=foundryvtt
 Network=proxy.network
 
 Label="traefik.enable=true"
-Label="traefik.http.routers.foundry.rule=Host(`dnd.home.renkin42.dev`)"
+Label="traefik.http.routers.foundry.rule=Host(`dnd.wedomad.science`)"
+Label="traefik.http.routers.foundry.service=foundry"
 Label="traefik.http.services.foundry.loadbalancer.server.port=30000"
+Label="traefik.http.routers.ddb-proxy.rule=Host(`dnd.wedomad.science`) && PathPrefix(`/ddb-proxy`)"
+Label="traefik.http.routers.ddb-proxy.service=ddb-proxy"
+Label="traefik.http.routers.ddb-proxy.middlewares=ddb-proxy-prefix"
+Label="traefik.http.services.ddb-proxy.loadbalancer.server.port=3000"
+Label="traefik.http.middlewares.ddb-proxy-prefix.stripprefix.prefixes=/ddb-proxy"

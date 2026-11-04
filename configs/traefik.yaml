@@ -16,6 +16,9 @@ entryPoints:
           - main: "home.renkin42.dev"
             sans:
               - "*.home.renkin42.dev"
+          - main: "wedomad.science"
+            sans:
+              - "*.wedomad.science"
 
 providers:
   docker:

@@ -1,23 +1,22 @@
 [Unit]
-Description=Netbird Peer for %i.pod
+Description=Netbird Routing Peer for Traefik
 
 [Container]
-ContainerName=%i-netbird
+Pod=tunnel.pod
+ContainerName=netbird-router
 Image=docker.io/netbirdio/netbird:latest
 AutoUpdate=registry
 
 AddCapability=NET_ADMIN
 AddCapability=NET_RAW
-#AddCapability=SYS_ADMIN
-#AddCapability=SYS_RESOURCE
 
 AddDevice=/dev/net/tun
 
 Environment=NB_MANAGEMENT_URL=https://netbird.renkin42.dev
 
-Volume=nbpeer@.volume:/var/lib/netbird:Z,U
+Volume=nbrouter.volume:/var/lib/netbird:Z,U
 
-Secret=nb-key-%i,type=env,target=NB_SETUP_KEY
+Secret=nb-router-key,type=env,target=NB_SETUP_KEY
 
 [Service]
 Restart=always
