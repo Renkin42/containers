@@ -27,10 +27,10 @@ providers:
     exposedByDefault: false
 
 certificatesResolvers:
-  coudflare:
+  cloudflare:
     acme:
       email: arleydecker@renkin42.net
-      storage: /letsecrypt/acme.json
+      storage: /letsencrypt/acme.json
       dnsChallenge:
         provider: cloudflare
         resolvers:

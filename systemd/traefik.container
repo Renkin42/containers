@@ -8,7 +8,7 @@ Image=docker.io/library/traefik:latest
 AutoUpdate=registry
 SecurityLabelDisable=true
 
-Environment=CLOUDFLARE_API_KEY_FILE=/run/secrets/cloudflare-cert-token
+Environment=CLOUDFLARE_DNS_API_TOKEN_FILE=/run/secrets/cloudflare-cert-token
 
 Volume=/etc/containers/configs/traefik.yaml:/etc/traefik/traefik.yaml:ro,z
 Volume=/var/run/podman/podman.sock:/var/run/docker.sock:ro
