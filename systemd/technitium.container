@@ -1,0 +1,27 @@
+[Unit]
+Description=Technitium DNS Server
+
+[Container]
+Pod=technitium.pod
+ContainerName=technitium
+Image=docker.io/technitium/dns-server:latest
+AutoUpdate=registry
+
+HealthCmd=curl -f http://127.0.0.1:5380/api/dnsClient/healthCheck | grep '\"status\":\"ok\"'
+HealthInterval=30s
+HealthTimeout=10s
+HealthRetries=3
+HealthStartPeriod=10s
+
+Environment=DNS_SERVER_DOMAIN=technitium
+Environment=DNS_SERVER_LOG_PATH=/var/log/technitium/dns
+
+Volume=dns-config.volume:/etc/dns:Z,U
+Volume=dns-logs.volume:/var/log/technitium/dns:Z,U
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=podman-start.target
