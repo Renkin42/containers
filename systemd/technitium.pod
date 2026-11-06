@@ -1,7 +1,7 @@
 [Pod]
 PodName=technitium
 HostName=technitium
-Network=host-vlan.network,ip=172.21.85.2
+Network=host-vlan.network:ip=172.21.85.2
 Network=proxy.network
 
 Label="traefik.enable=true"
