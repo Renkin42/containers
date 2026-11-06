@@ -2,8 +2,3 @@
 PodName=technitium
 HostName=technitium
 Network=host-vlan.network,ip=172.21.85.2
-PublishPort=5380/tcp
-PublishPort=53/tcp
-PublishPort=53/udp
-PublishPort=443/tcp
-PublishPort=443/udp

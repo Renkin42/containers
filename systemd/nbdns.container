@@ -1,0 +1,26 @@
+[Unit]
+Description=Netbird Routing Peer for Technitium DNS
+
+[Container]
+Pod=technitium.pod
+ContainerName=netbird-dns
+Image=docker.io/netbirdio/netbird:latest
+AutoUpdate=registry
+
+AddCapability=NET_ADMIN
+AddCapability=NET_RAW
+
+AddDevice=/dev/net/tun
+
+Environment=NB_MANAGEMENT_URL=https://netbird.renkin42.dev
+
+Volume=nbdns.volume:/var/lib/netbird:Z,U
+
+Secret=nb-dns-key,type=env,target=NB_SETUP_KEY
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=podman-start.target
