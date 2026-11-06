@@ -2,3 +2,8 @@
 PodName=technitium
 HostName=technitium
 Network=host-vlan.network,ip=172.21.85.2
+Network=proxy.network
+
+Label="traefik.enable=true"
+Label="traefik.http.routers.technitium.rule=Host(`ns1.home.renkin42.dev`)"
+Label="traefik.http.services.technitium.loadbalancer.server.port=8053"
