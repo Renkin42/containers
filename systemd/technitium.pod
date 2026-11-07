@@ -6,4 +6,4 @@ Network=proxy.network
 
 Label="traefik.enable=true"
 Label="traefik.http.routers.technitium.rule=Host(`ns1.home.renkin42.dev`)"
-Label="traefik.http.services.technitium.loadbalancer.server.port=8053"
+Label="traefik.http.services.technitium.loadbalancer.server.port=80"
