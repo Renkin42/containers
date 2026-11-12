@@ -2,6 +2,8 @@
 Description=Nextcloud AIO Apache
 After=nextcloud-aio-eurooffice.container
 After=nextcloud-aio-notify-push.container
+After=nextcloud-aio-talk.container
+After=nextcloud-aio-harp.container
 After=nextcloud-aio-nextcloud.container
 
 [Container]
@@ -29,6 +31,8 @@ Environment=TZ=America/Los_Angeles
 Environment=APACHE_MAX_SIZE="1073741824"
 Environment=APACHE_MAX_TIME=3600
 Environment=NOTIFY_PUSH_HOST=localhost
+Environment=TALK_HOST=localhost
+Environment=HARP_HOST=localhost
 
 Volume=nextcloud-aio-nextcloud.volume:/var/www/html:ro,Z
 Volume=nextcloud-aio-apache.volume:/mnt/data:Z

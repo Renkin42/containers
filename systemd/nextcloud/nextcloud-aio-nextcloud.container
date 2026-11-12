@@ -1,0 +1,20 @@
+[Unit]
+Description=Nextcloud Main Container
+After=nextcloud-aio-database.container
+After=nextcloud-aio-redis.container
+After=nextcloud-aio-fulltextsearch.container
+After=nextcloud-aio-imaginary.container
+
+[Container]
+Pod=nextcloud.pod
+ContainerName=nextcloud-aio-nextcloud
+Image=ghcr.io/nextcloud-releases/aio-nextcloud:latest
+AutoUpdate=registry
+RunInit=true
+
+HealthCmd=/healthcheck.sh
+HealthStartPeriod=0s
+HealthStartupInterval=5s
+HealthInterval=30s
+HealthTimeout=30s
+HealthRetries=3
