@@ -1,0 +1,6 @@
+[Pod]
+PodName=nextcloud
+Network=proxy.network
+
+[Install]
+WantedBy=podman-start.target
