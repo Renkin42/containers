@@ -14,7 +14,7 @@ HealthStartPeriod=60s
 HealthStartupInterval=5s
 HealthInterval=30s
 HealthTimeout=30s
-HealthRetries=3
+HealthRetries=9
 
 Environment=AIO_LOG_LEVEL=warn
 Environment=TZ=America/Los_Angeles
