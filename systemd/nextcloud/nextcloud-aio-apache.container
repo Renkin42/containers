@@ -3,7 +3,6 @@ Description=Nextcloud AIO Apache
 After=nextcloud-aio-eurooffice.container
 After=nextcloud-aio-notify-push.container
 After=nextcloud-aio-talk.container
-After=nextcloud-aio-harp.container
 After=nextcloud-aio-nextcloud.container
 
 [Container]

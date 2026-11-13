@@ -74,8 +74,7 @@ Secret=nextcloud-aio-fulltextsearch-password,type=env,target=FULLTEXTSEARCH_PASS
 Environment=REMOVE_DISABLED_APPS="no"
 Secret=nextcloud-aio-imaginary-secret,type=env,target=IMAGINARY_SECRET
 Environment=WHITEBOARD_ENABLED="no"
-Environment=HARP_ENABLED="yes"
-Secret=nextcloud-aio-hp-shared-key,type=env,target=HP_SHARED_KEY
+Environment=HARP_ENABLED="no"
 
 Volume=nextcloud-aio-nextcloud.volume:/var/www/html:rw,Z
 Volume=nextcloud-aio-nextcloud-data.volume:/mnt/ncdata:rw,Z
