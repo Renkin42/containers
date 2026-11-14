@@ -2,5 +2,14 @@
 PodName=nextcloud
 Network=proxy.network
 
+Label="traefik.enable=true"
+Label="traefik.http.routers.nextcloud.rule=Host(`cloud.wedomad.science`)"
+Label="traefik.http.routers.nextcloud.service=nextcloud"
+Label="traefik.http.routers.nextcloud.middlewares=nextcloud-secure-headers"
+Label="traefik.http.services.nextcloud.loadbalancer.server.port=11000"
+Label="traefik.http.middlewares.nextcloud-secure-headers.headers.hostsproxyheaders=X-Forwarded-Host"
+Label="traefik.http.middlewares.nextcloud-secure-headers.headers.referrerpolicy=same-origin"
+Label="traefik.http.middlewares.nextcloud-secure-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
+
 [Install]
 WantedBy=podman-start.target
