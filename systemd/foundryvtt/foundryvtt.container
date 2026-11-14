@@ -10,9 +10,10 @@ AutoUpdate=registry
 Volume=foundryvtt.volume:/data:Z,U
 
 Environment=FOUNDRY_TELEMETRY=true
-Environment=FOUNDRY_HOSTNAME=dnd.coelacanth-stargazer.ts.net
+Environment=FOUNDRY_HOSTNAME=dnd.wedomad.science
 Environment=FOUNDRY_PROXY_PORT=443
 Environment=FOUNDRY_PROXY_SSL=true
+Environment=FOUNDRY_WORLD=obojima-tales-from-the-ramen-shop
 
 Secret=foundry-config,target=config.json
 
