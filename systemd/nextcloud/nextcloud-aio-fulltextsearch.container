@@ -2,7 +2,7 @@
 Description=Nextcloud AIO ElasticSearch
 
 [Container]
-Pod=nextcloud.pod
+Pod=nextcloud-apps.pod
 ContainerName=nextcloud-aio-fulltextsearch
 Image=ghcr.io/nextcloud-releases/aio-fulltextsearch:latest
 AutoUpdate=registry

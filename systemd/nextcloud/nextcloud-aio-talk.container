@@ -2,7 +2,7 @@
 Description=Nextcloud AIO Talk Server
 
 [Container]
-Pod=nextcloud.pod
+Pod=nextcloud-apps.pod
 ContainerName=nextcloud-aio-talk
 Image=ghcr.io/nextcloud-releases/aio-talk:latest
 AutoUpdate=registry
@@ -17,7 +17,7 @@ HealthTimeout=30s
 HealthRetries=3
 
 Environment=NC_DOMAIN=cloud.wedomad.science
-Environment=TALK_HOST=localhost
+Environment=TALK_HOST=nextcloud-apps
 Secret=nextcloud-aio-turn-secret,type=env,target=TURN_SECRET
 Secret=nextcloud-aio-signaling-secret,type=env,target=SIGNALING_SECRET
 Environment=AIO_LOG_LEVEL=warn

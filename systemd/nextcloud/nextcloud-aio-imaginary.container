@@ -2,7 +2,7 @@
 Description=Nextcloud AIO Imaginary Thumbnail Generator
 
 [Container]
-Pod=nextcloud.pod
+Pod=nextcloud-apps.pod
 ContainerName=nextcloud-aio-imaginary
 Image=ghcr.io/nextcloud-releases/aio-imaginary:latest
 AutoUpdate=registry

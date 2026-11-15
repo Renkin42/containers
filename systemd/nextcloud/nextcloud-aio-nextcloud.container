@@ -1,5 +1,6 @@
 [Unit]
 Description=Nextcloud Main Container
+Wants=nextcloud-apps.pod
 After=nextcloud-aio-database.container
 After=nextcloud-aio-redis.container
 After=nextcloud-aio-clamav.container
@@ -44,21 +45,21 @@ Secret=nextcloud-aio-eurooffice-secret,type=env,target=EUROOFFICE_SECRET
 Environment=AIO_LOG_LEVEL=warn
 Environment=NEXTCLOUD_MOUNT=/mnt/
 Environment=CLAMAV_ENABLED="yes"
-Environment=CLAMAV_HOST=localhost
+Environment=CLAMAV_HOST=nextcloud-apps
 Environment=ONLYOFFICE_ENABLED="no"
 Environment=EUROOFFICE_ENABLED="yes"
 Environment=COLLABORA_ENABLED="no"
 Environment=TALK_ENABLED="yes"
-Environment=EUROOFFICE_HOST=localhost
+Environment=EUROOFFICE_HOST=nextcloud-apps
 Environment=UPDATE_NEXTCLOUD_APPS="no"
 Environment=TZ=America/Los_Angeles
 Environment=TALK_PORT=3478
 Environment=IMAGINARY_ENABLED="yes"
-Environment=IMAGINARY_HOST=localhost
+Environment=IMAGINARY_HOST=nextcloud-apps
 Environment=PHP_UPLOAD_LIMIT=1G
 Environment=PHP_MEMORY_LIMIT=512M
 Environment=FULLTEXTSEARCH_ENABLED="yes"
-Environment=FULLTEXTSEARCH_HOST=localhost
+Environment=FULLTEXTSEARCH_HOST=nextcloud-apps
 Environment=FULLTEXTSEARCH_PROTOCOL=http
 Environment=FULLTEXTSEARCH_PORT=9200
 Environment=FULLTEXTSEARCH_USER=elastic

@@ -2,7 +2,7 @@
 Description=Nextcloud AIO ClamAV Anti Virus
 
 [Container]
-Pod=nextcloud.pod
+Pod=nextcloud-apps.pod
 ContainerName=nextcloud-aio-clamav
 Image=ghcr.io/nextcloud-releases/aio-clamav:latest
 AutoUpdate=registry

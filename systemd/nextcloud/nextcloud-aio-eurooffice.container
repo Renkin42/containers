@@ -2,7 +2,7 @@
 Description=Nextcloud AIO EuroOffice Server
 
 [Container]
-Pod=nextcloud.pod
+Pod=nextcloud-apps.pod
 ContainerName=nextcloud-aio-eurooffice
 Image=ghcr.io/nextcloud-releases/aio-eurooffice:latest
 AutoUpdate=registry
