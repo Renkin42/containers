@@ -1,6 +1,5 @@
 [Unit]
 Description=Nextcloud AIO Apache
-After=nextcloud-aio-eurooffice.container
 After=nextcloud-aio-notify-push.container
 After=nextcloud-aio-talk.container
 After=nextcloud-aio-nextcloud.container
@@ -23,7 +22,7 @@ HealthRetries=3
 Environment=NC_DOMAIN=cloud.wedomad.science
 Environment=NEXTCLOUD_HOST=localhost
 Environment=APACHE_HOST=localhost
-Environment=APACHE_PORT=11000
+Environment=APACHE_PORT=11080
 Environment=AIO_Log_level=warn
 Environment=EUROOFFICE_HOST=localhost
 Environment=TZ=America/Los_Angeles

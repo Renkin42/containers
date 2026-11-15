@@ -1,5 +1,5 @@
 [Unit]
-Descriotion=Nextcloud AIO Database
+Description=Nextcloud AIO Database
 
 [Container]
 Pod=nextcloud.pod

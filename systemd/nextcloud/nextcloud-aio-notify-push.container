@@ -20,7 +20,7 @@ Environment=NEXTCLOUD_HOST=localhost
 Environment=AIO_LOG_LEVEL=warn
 Environment=TZ=America/Los_Angeles
 
-Volume=nextcloud-aio-nextcloud:/var/www/html:ro,z
+Volume=nextcloud-aio-nextcloud.volume:/var/www/html:ro,Z
 Volume=/usr/local/share/ca-certificates/my-custom-ca:/usr/local/share/ca-certificates:ro,z
 ReadOnly=true
 Tmpfs=/tmp

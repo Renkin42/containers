@@ -31,7 +31,7 @@ Environment=REDIS_HOST=localhost
 Environment=REDIS_PORT=6379
 Secret=nextcloud-aio-redis-password,type=env,target=REDIS_HOST_PASSWORD
 Environment=APACHE_HOST=localhost
-Environment=APACHE_PORT=11000
+Environment=APACHE_PORT=11080
 Environment=NC_DOMAIN=cloud.wedomad.science
 Environment=ADMIN_USER=admin
 Secret=nextcloud-aio-admin-password,type=env,target=ADMIN_PASSWORD
