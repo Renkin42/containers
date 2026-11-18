@@ -1,0 +1,20 @@
+[Unit]
+description=Nextcloud PosgreSQL Database
+
+[Container]
+Pod=nextcloud.pod
+ContainerName=nextcloud-db
+Image=docker.io/library/postgres:18-alpine
+AutoUpdate=registry
+
+Volume=nextcloud-db.volume:/var/lib/postgresql/data:Z
+
+Environment=POSTGRESQL_DB=nextcloud
+Environment=POSTGRESQL_USER=nextcloud
+Environment=POSTGRESQL_PASSWORD_FILE=/run/secrets/nextcloud-db-password
+
+Secret=nextcloud-db-password
+
+[Service]
+Restart=always
+TimeoutStartSec=900
