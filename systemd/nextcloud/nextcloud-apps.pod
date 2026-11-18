@@ -1,9 +1,0 @@
-[Unit]
-Description=Non-essential apps for Nextcloud
-
-[Pod]
-PodName=nextcloud-apps
-HostName=nextcloud-apps
-
-[Install]
-WantedBy=podman-start.target
