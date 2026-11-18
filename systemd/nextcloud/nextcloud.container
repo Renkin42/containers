@@ -21,12 +21,14 @@ Environment=POSTGRES_DB=nextcloud
 Environment=POSTGRES_USER=nextcloud
 Environment=POSTGRES_PASSWORD_FILE=/run/secrets/nextcloud-db-password
 Environment=REDIS_HOST=localhost
-Environment=REDIS_HOST_USER=nextcloud
-Environment=REDIS_HOST_PASSWORD_FILE=/run/secrets/nextcloud-redis-password
+Environment=PHP_UPLOAD_LIMIT=10G
+Environment=APACHE_BODY_LIMIT=0
+Environment=APACHE_DISABLE_REWRITE_IP=1
+Environment=TRUSTED_PROXIES=172.23.0.0/16
+Environment=NEXTCLOUD_TRUSTED_DOMAINS=cloud.wedomad.science
 
 Secret=nextcloud-admin-password
 Secret=nextcloud-db-password
-Secret=nextcloud-redis-password
 
 [Service]
 Restart=always
