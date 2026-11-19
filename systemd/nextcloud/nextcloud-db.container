@@ -7,7 +7,7 @@ ContainerName=nextcloud-db
 Image=docker.io/library/postgres:18-alpine
 AutoUpdate=registry
 
-Volume=nextcloud-db.volume:/var/lib/postgresql/data:Z
+Volume=nextcloud-db.volume:/var/lib/postgresql:Z
 
 Environment=POSTGRES_DB=nextcloud
 Environment=POSTGRES_USER=nextcloud
