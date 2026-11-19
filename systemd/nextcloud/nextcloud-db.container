@@ -9,9 +9,9 @@ AutoUpdate=registry
 
 Volume=nextcloud-db.volume:/var/lib/postgresql/data:Z
 
-Environment=POSTGRESQL_DB=nextcloud
-Environment=POSTGRESQL_USER=nextcloud
-Environment=POSTGRESQL_PASSWORD_FILE=/run/secrets/nextcloud-db-password
+Environment=POSTGRES_DB=nextcloud
+Environment=POSTGRES_USER=nextcloud
+Environment=POSTGRES_PASSWORD_FILE=/run/secrets/nextcloud-db-password
 
 Secret=nextcloud-db-password
 
