@@ -1,7 +1,5 @@
 [Unit]
 Description=NextCloud Main Server
-Requires=nextcloud-db.container
-Requires=nextcloud-cache.container
 After=nextcloud-db.container
 After=nextcloud-cache.container
 
