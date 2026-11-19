@@ -1,0 +1,25 @@
+[Unit]
+Description=Safeway Employee Electronic Schedule Scraper
+After=nextcloud.container
+
+[Container]
+Pod=nextcloud.pod
+ContainerName=scraper
+Image=ghcr.io/renkin42/sws-scraper:latest
+AutoUpdate=registry
+
+Environment=CALDAV_URL=http://localhost/remote.php
+Environment=CALDAV_USER=admin
+Environment=TZ=America/Los_Angeles
+Environment=LOGLEVEL=INFO
+
+Secret=safeway-id,type=env,target=SW_ID
+Secret=safeway-password,type=env,target=SW_PASS
+Secret=nextcloud-admin-password,type=env,target=CALDAV_PASSWORD
+
+[Service]
+Restart=on-failure
+TimeoutStartSec=900
+
+[Install]
+WantedBy=podman-start.target
