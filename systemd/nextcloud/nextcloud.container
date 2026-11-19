@@ -11,7 +11,7 @@ ContainerName=nextcloud-main
 Image=docker.io/library/nextcloud:latest
 AutoUpdate=registry
 
-Volume=nextcloud.volume:/var/wwww/html:Z
+Volume=nextcloud.volume:/var/www/html:Z
 Volume=nextcloud-data.volume:/var/www/html/data:Z
 
 Environment=NEXTCLOUD_ADMIN_USER=admin
