@@ -4,7 +4,7 @@ After=nextcloud.container
 
 [Container]
 Pod=nextcloud.pod
-ContainerName=scraper
+ContainerName=nextcloud-workcal-scraper
 Image=ghcr.io/renkin42/sws-scraper:latest
 AutoUpdate=registry
 
@@ -20,6 +20,3 @@ Secret=nextcloud-admin-password,type=env,target=CALDAV_PASSWORD
 [Service]
 Restart=on-failure
 TimeoutStartSec=900
-
-[Install]
-WantedBy=podman-start.target
