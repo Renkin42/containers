@@ -23,7 +23,7 @@ Environment=PHP_UPLOAD_LIMIT=10G
 Environment=APACHE_BODY_LIMIT=0
 Environment=APACHE_DISABLE_REWRITE_IP=1
 Environment=TRUSTED_PROXIES=172.23.0.0/16
-Environment=NEXTCLOUD_TRUSTED_DOMAINS=cloud.wedomad.science
+Environment=NEXTCLOUD_TRUSTED_DOMAINS=cloud.wedomad.science nextcloud
 
 Secret=nextcloud-admin-password
 Secret=nextcloud-db-password
