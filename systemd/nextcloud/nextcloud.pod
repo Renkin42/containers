@@ -8,12 +8,17 @@ Label="traefik.http.routers.nextcloud.service=nextcloud"
 Label="traefik.http.routers.nextcloud.middlewares=nextcloud-secureheaders,nextcloud-redirectregex"
 Label="traefik.http.services.nextcloud.loadbalancer.server.port=80"
 Label="traefik.http.middlewares.nextcloud-secureheaders.headers.stsSeconds=31536000"
+Label="traefik.http.middlewares.nextcloud-secure-headers.headers.hostsproxyheaders=X-Forwarded-Host"
+Label="traefik.http.middlewares.nextcloud-secure-headers.headers.referrerpolicy=same-origin"
+Label="traefik.http.middlewares.nextcloud-secure-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
 Label="traefik.http.middlewares.nextcloud-redirectregex.redirectregex.permanent=true"
 Label="traefik.http.middlewares.nextcloud-redirectregex.redirectregex.regex=https://(.*)/.well-known/(?:card|cal)dav"
 Label="traefik.http.middlewares.nextcloud-redirectregex.redirectregex.replacement=https://$${1}/remote.php/dav"
 Label="traefik.http.routers.collabora.rule=Host(`office.wedomad.science`)"
 Label="traefik.http.routers.collabora.service=collabora"
+Label="traefik.http.routers.collabora.middlewares=nextcloud-secureheaders"
 Label="traefik.http.services.collabora.loadbalancer.server.port=9980"
+
 
 [Install]
 WantedBy=podman-start.target

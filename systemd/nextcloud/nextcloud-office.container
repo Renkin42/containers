@@ -7,6 +7,7 @@ ContainerName=nextcloud-office
 Image=docker.io/collabora/code:latest
 AutoUpdate=registry
 
+Environment=domain=https://office.wedomad.science
 Environment=aliasgroup1=https://cloud.wedomad.science:443,https://cloud\\.wedomad\\.science:443
 Environment=username=admin
 Environment=dictionaries=en_US
