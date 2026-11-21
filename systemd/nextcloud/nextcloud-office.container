@@ -1,0 +1,19 @@
+[Unit]
+Description=Nextcloud Collabora CODE Server
+
+[Container]
+Pod=nextcloud.pod
+ContainerName=nextcloud-office
+Image=docker.io/collabora/code:latest
+AutoUpdate=registry
+
+Environment=aliasgroup1=https://cloud.wedomad.science:443,https://cloud\\.wedomad\\.science:443
+Environment=username=admin
+Environment=dictionaries=en_US
+Environment=extra_params=--o:ssl.enable=false --o:ssl.termination=true --o:logging.level=warning
+
+Secret=nextcloud-office-password,type=env,target=password
+
+[Service]
+Restart=always
+TimeoutStartSec=900
