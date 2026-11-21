@@ -11,6 +11,9 @@ Label="traefik.http.middlewares.nextcloud-secureheaders.headers.stsSeconds=31536
 Label="traefik.http.middlewares.nextcloud-redirectregex.redirectregex.permanent=true"
 Label="traefik.http.middlewares.nextcloud-redirectregex.redirectregex.regex=https://(.*)/.well-known/(?:card|cal)dav"
 Label="traefik.http.middlewares.nextcloud-redirectregex.redirectregex.replacement=https://$${1}/remote.php/dav"
+Label="traefik.http.routers.collabora.rule=Host(`office.wedomad.science`)"
+Label="traefik.http.routers.collabora.service=collabora"
+Label="traefik.http.services.collabora.loadbalancer.server.port=9980"
 
 [Install]
 WantedBy=podman-start.target
