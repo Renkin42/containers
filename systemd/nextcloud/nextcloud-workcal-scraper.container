@@ -9,13 +9,13 @@ Image=ghcr.io/renkin42/sws-scraper:latest
 AutoUpdate=registry
 
 Environment=CALDAV_URL=http://localhost/remote.php/dav
-Environment=CALDAV_USER=admin
+Environment=CALDAV_USER=Renkin42
 Environment=TZ=America/Los_Angeles
 Environment=LOGLEVEL=INFO
 
 Secret=safeway-id,type=env,target=SW_ID
 Secret=safeway-password,type=env,target=SW_PASS
-Secret=nextcloud-admin-password,type=env,target=CALDAV_PASSWORD
+Secret=nextcloud-calendar-password,type=env,target=CALDAV_PASSWORD
 
 [Service]
 Restart=on-failure
