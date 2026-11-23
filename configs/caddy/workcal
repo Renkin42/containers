@@ -1,6 +1,0 @@
-workcal.nbpeer.renkin42.dev {
-    reverse_proxy localhost:5232
-    tls arleydecker@renkin42.net {
-        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
-    }
-}
