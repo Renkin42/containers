@@ -1,0 +1,25 @@
+[Unit]
+Description=CopyParty File Sharing Server Main Container
+
+[Container]
+Pod=copyparty.pod
+ContainerName=copyparty
+Image=docker.io/copyparty/ac:latest
+AutoUpdate=registry
+StopTimeout=15
+
+HealthCmd="wget --spider -q 127.0.0.1:3923/?reset=/._"
+HealthInterval=1m
+HealthTimeout=2s
+HealthRetries=5
+HealthStartPeriod=15s
+
+Environment=LD_PRELOAD=/usr/lib/libmimalloc-secure.so.2
+Environment=PYTHONUNBUFFERED=1
+
+Volume=/etc/containers/configs/copyparty.cfg:/cfg/copyparty.cfg:ro,z
+Volume=/var/www/copyparty:/w:z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
