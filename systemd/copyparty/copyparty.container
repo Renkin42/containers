@@ -17,8 +17,10 @@ HealthStartPeriod=15s
 Environment=LD_PRELOAD=/usr/lib/libmimalloc-secure.so.2
 Environment=PYTHONUNBUFFERED=1
 
-Volume=/etc/containers/configs/copyparty.cfg:/cfg/copyparty.cfg:ro,z
+Volume=/etc/containers/configs/copyparty.conf:/cfg/copyparty.conf:ro,z
 Volume=/var/www/copyparty:/w:z
+
+Secret=copyparty-users,target=/cfg/users.conf
 
 [Service]
 Restart=always

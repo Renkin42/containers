@@ -5,5 +5,10 @@ Description=CopyParty File Sharing Server
 PodName=copyparty
 Network=proxy.network
 
+Label="traefik.enable"
+Label="traefik.http.routers.copyparty.rule=Host(`share.home.renkin42.dev`)"
+Label="traefik.http.routers.copyparty.service=copyparty"
+Label="traefik.http.services.copyparty.loadbalancer.port=3923"
+
 [Install]
 WantedBy=podman-start.target
