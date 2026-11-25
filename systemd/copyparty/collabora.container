@@ -1,0 +1,16 @@
+[Unit]
+Description=Collabora Office Suite
+
+[Container]
+Pod=copyparty.pod
+ContainerName=collabora
+Image=docker.io/collabora/code:latest
+AutoUpdate=registry
+AddCapability=MKNOD
+
+Environment=DONT_GEN_SSL_CERT=true
+Environment=extra_params="--o:ssl.enable=false --o:ssl.termination=true"
+
+[Service]
+Restart=always
+timeoutStartsec=900
