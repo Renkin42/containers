@@ -4,7 +4,7 @@ Description=Collabora Office Suite
 [Container]
 Pod=copyparty.pod
 ContainerName=collabora
-Image=docker.io/collabora/code:26.04.2.4.1
+Image=docker.io/collabora/code:latest
 AutoUpdate=registry
 AddCapability=MKNOD
 
@@ -12,7 +12,7 @@ Environment=DONT_GEN_SSL_CERT=true
 Environment=server_name=office.home.renkin42.dev
 Environment=aliasgroup1=http://copyparty:3923,https://share.home.renkin42.dev
 Environment=dictionaries=en_US
-Environment=extra_params=--o:ssl.enable=false --o:ssl.termination=true
+Environment=extra_params="--o:ssl.enable=false --o:ssl.termination=true"
 
 [Service]
 Restart=always
