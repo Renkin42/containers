@@ -4,7 +4,7 @@ Description=Collabora Office Suite
 [Container]
 Pod=copyparty.pod
 ContainerName=collabora
-Image=docker.io/collabora/code:latest
+Image=docker.io/collabora/code:26.04.2.4.1
 AutoUpdate=registry
 AddCapability=MKNOD
 
