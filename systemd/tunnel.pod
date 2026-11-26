@@ -1,6 +1,7 @@
 [Pod]
 PodName=tunnel
-Network=proxy.network
+Network=proxy.network:ip=172.23.0.10
 PublishPort=8080:8080
+PublishPort=80:80
 PublishPort=443:443
 HostName=traefik
