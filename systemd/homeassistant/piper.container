@@ -1,0 +1,18 @@
+[Unit]
+Description=Piper Text to Speech Container
+
+[Container]
+Pod=homeassistant.pod
+ContainerName=piper
+Image=ghcr.io/slackr31337/wyoming-piper-gpu:latest
+AutoUpdate=registry
+AddDevice=nvidia.com/gpu=all
+SecurityLabelDisable=true
+
+Environment=PIPER_VOICE=en_US-lessac-medium
+
+Volume=piper.volume:/data:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900
