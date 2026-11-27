@@ -12,6 +12,3 @@ Volume=mosquitto.volume:/mosquitto/:Z,U
 [Service]
 Restart=always
 TimeoutStartSec=900
-
-[Install]
-WantedBy=podman-start.target

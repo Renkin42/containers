@@ -1,0 +1,20 @@
+[Unit]
+Description=Whisper Speech to Text Server
+
+[Container]
+Pod=homeassistant.pod
+ContainerName=whisper
+Image=lscr.io/linuxserver/faster-whisper:gpu
+AutoUpdate=registry
+AddDevice=nvidia.com/gpu=all
+SecurityLabelDisable=true
+
+Environment=PUID=1000
+Environment=PGID=1000
+Environment=TZ=America/Los_Angeles
+
+Volume=whisper.volume:/config:Z
+
+[Service]
+Restart=always
+TimeoutStartSec=900

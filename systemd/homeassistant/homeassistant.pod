@@ -7,3 +7,6 @@ HostName=hass
 Label="traefik.enable=true"
 Label="traefik.http.routers.homeassistant.rule=Host(`ha.home.renkin42.dev`)"
 Label="traefik.http.services.homeassistant.loadbalancer.server.port=8123"
+
+[Install]
+WantedBy=podman-start.target

@@ -17,6 +17,3 @@ Environment=TZ=America/Los_Angeles
 [Service]
 Restart=always
 TimeoutStartSec=900
-
-[Install]
-WantedBy=podman-start.target
